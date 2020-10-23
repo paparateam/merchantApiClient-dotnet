@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C05811F0-1907-4467-8462-47D0C7F31923}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8C2F43A9-F86F-4735-B761-B16AFE80CC4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Papara.Net", "src\Papara.Net\Papara.Net\Papara.Net.csproj", "{8F243EEF-F298-49F2-9D2B-98072E43CDB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaTests", "src\Papara.Net\PaparaTests\PaparaTests.csproj", "{BB9D1CB6-2589-4EBA-9FF1-1CAF27920100}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaparaCoreSamples", "examples\PaparaCoreSamples\PaparaCoreSamples.csproj", "{A4DA32DE-8593-4B91-BC82-74A34557C91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaNetFrameworkSamples", "examples\PaparaNetFrameworkSamples\PaparaNetFrameworkSamples.csproj", "{FF6CF467-A66B-4916-BD68-3DC0835A9CB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaparaNet45Samples", "examples\PaparaNet45Samples\PaparaNet45Samples.csproj", "{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F243EEF-F298-49F2-9D2B-98072E43CDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F243EEF-F298-49F2-9D2B-98072E43CDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F243EEF-F298-49F2-9D2B-98072E43CDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F243EEF-F298-49F2-9D2B-98072E43CDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9D1CB6-2589-4EBA-9FF1-1CAF27920100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9D1CB6-2589-4EBA-9FF1-1CAF27920100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9D1CB6-2589-4EBA-9FF1-1CAF27920100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9D1CB6-2589-4EBA-9FF1-1CAF27920100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4DA32DE-8593-4B91-BC82-74A34557C91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4DA32DE-8593-4B91-BC82-74A34557C91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4DA32DE-8593-4B91-BC82-74A34557C91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4DA32DE-8593-4B91-BC82-74A34557C91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6CF467-A66B-4916-BD68-3DC0835A9CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6CF467-A66B-4916-BD68-3DC0835A9CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6CF467-A66B-4916-BD68-3DC0835A9CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6CF467-A66B-4916-BD68-3DC0835A9CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4DA32DE-8593-4B91-BC82-74A34557C91D} = {8C2F43A9-F86F-4735-B761-B16AFE80CC4A}
+		{FF6CF467-A66B-4916-BD68-3DC0835A9CB3} = {8C2F43A9-F86F-4735-B761-B16AFE80CC4A}
+		{33F3DEF1-DBEE-4D79-ADD5-E7076F1395DB} = {8C2F43A9-F86F-4735-B761-B16AFE80CC4A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08A9A821-7DAF-42E2-B5DF-4C74C0026388}
+	EndGlobalSection
+EndGlobal
