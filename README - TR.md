@@ -1356,6 +1356,7 @@ Papara numarasına para gönderin. Bu işlemi gerçekleştirmek için `MassPayme
 | MassPaymentId      | string   | Ödeme ID'sini alır veya belirler. Ödeme işlemlerinde hatalı tekrarları önlemek için üye iş yeri tarafından gönderilen benzersiz değerdir. Kısa süre önce gönderilmiş ve başarılı olan bir massPaymentId yeni bir taleple tekrar gönderilirse, istek başarısız olur. |
 | TurkishNationalId  | long     | TC kimlik numarasını alır veya belirler. Ödemeyi alacak kullanıcının gönderdiği kimlik bilgilerinin Papara sisteminde kontrolünü sağlar. Kimlik bilgilerinde bir çelişki olması durumunda işlem gerçekleşmeyecektir. |
 | Description        | string   | Açıklamayı alır veya ayarlar. Üye iş yeri tarafından sağlanan işlemin açıklamasıdır. Zorunlu bir alan değildir. Gönderilirse işlem açıklamalarında alıcı tarafından görülür. |
+| Currency                 | int      | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
 
 ### Servis Methodu
 
@@ -1410,6 +1411,7 @@ Papara'da kayıtlı e-posta adresine para gönderin. Bu işlemi gerçekleştirme
 | MassPaymentId     | string   | Ödeme ID'sini alır veya belirler. Ödeme işlemlerinde hatalı tekrarları önlemek için üye iş yeri tarafından gönderilen benzersiz değerdir. Kısa süre önce gönderilmiş ve başarılı olan bir massPaymentId yeni bir taleple tekrar gönderilirse, istek başarısız olur. |
 | TurkishNationalId | long     | TC kimlik numarasını alır veya belirler. Ödemeyi alacak kullanıcının gönderdiği kimlik bilgilerinin Papara sisteminde kontrolünü sağlar. Kimlik bilgilerinde bir çelişki olması durumunda işlem gerçekleşmeyecektir. |
 | Description       | string   | Açıklamayı alır veya ayarlar. Üye iş yeri tarafından sağlanan işlemin açıklamasıdır. Zorunlu bir alan değildir. Gönderilirse işlem açıklamalarında alıcı tarafından görülür. |
+| Currency                 | int      | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
 
 ### Servis Methodu
 
@@ -1463,6 +1465,7 @@ Papara'da kayıtlı telefon numarasına para gönderin. Bu işlemi gerçekleşti
 | MassPaymentId     | string   | Ödeme ID'sini alır veya belirler. Ödeme işlemlerinde hatalı tekrarları önlemek için üye iş yeri tarafından gönderilen benzersiz değerdir. Kısa süre önce gönderilmiş ve başarılı olan bir massPaymentId yeni bir taleple tekrar gönderilirse, istek başarısız olur. |
 | TurkishNationalId | long     | TC kimlik numarasını alır veya belirler. Ödemeyi alacak kullanıcının gönderdiği kimlik bilgilerinin Papara sisteminde kontrolünü sağlar. Kimlik bilgilerinde bir çelişki olması durumunda işlem gerçekleşmeyecektir. |
 | Description       | string   | Açıklamayı alır veya ayarlar. Üye iş yeri tarafından sağlanan işlemin açıklamasıdır. Zorunlu bir alan değildir. Gönderilirse işlem açıklamalarında alıcı tarafından görülür. |
+| Currency                 | int      | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
 
 ### Servis Methodu
 
@@ -1535,15 +1538,15 @@ return massPaymentServiceResult;
 | CreatedAt                | DateTime | Ödemenin oluşturulma tarihini alır veya belirler             |
 | MerchantId               | string   | Üye iş yeri ID'sini alır veya belirler                       |
 | UserId                   | string   | Kullanıcı ID'sini alır veya belirler                         |
-| PaymentMethod            | int?     | Ödeme Yöntemini alır veya belirler. <br />0 - Kullanıcı, mevcut Papara bakiyesiyle işlemi tamamladı <br />1 - Kullanıcı, işlemi daha önce tanımlanmış bir banka / kredi kartı ile tamamladı. <br />2 - Kullanıcı, mobil ödeme yoluyla işlemi tamamladı. |
+| PaymentMethod            | int      | Ödeme Yöntemini alır veya belirler. <br />0 - Kullanıcı, mevcut Papara bakiyesiyle işlemi tamamladı <br />1 - Kullanıcı, işlemi daha önce tanımlanmış bir banka / kredi kartı ile tamamladı. <br />2 - Kullanıcı, mobil ödeme yoluyla işlemi tamamladı. |
 | PaymentMethodDescription | string   | Ödeme yöntemi açıklamasını alır veya belirler.               |
 | ReferenceId              | string   | Referans numarasını alır veya belirler.                      |
 | OrderDescription         | string   | Sipariş açıklamasını alır veya belirler.                     |
-| Status                   | int?     | Ödeme durumunu alır veya belirler.<br /> 0 - Bekleniyor, ödeme henüz yapılmadı. <br />1 - Ödeme yapıldı, işlem tamamlandı. 2 - İşlemler üye iş yeri tarafından iade edildi. |
+| Status                   | int      | Ödeme durumunu alır veya belirler.<br /> 0 - Bekleniyor, ödeme henüz yapılmadı. <br />1 - Ödeme yapıldı, işlem tamamlandı. 2 - İşlemler üye iş yeri tarafından iade edildi. |
 | StatusDescription        | string   | Ödeme durumu açıklamasını alır veya belirler                 |
-| Amount                   | decimal? | Ödeme tutarını alır veya belirler                            |
-| Fee                      | decimal? | Ödeme hizmet bedelini alır veya belirler                     |
-| Currency                 | int?     | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
+| Amount                   | decimal  | Ödeme tutarını alır veya belirler                            |
+| Fee                      | decimal  | Ödeme hizmet bedelini alır veya belirler                     |
+| Currency                 | int      | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
 | NotificationUrl          | string   | Bildirim URL'ini alır veya belirler.                         |
 | NotificationDone         | bool?    | Bildirimin yapılıp yapılmadığını alır veya belirler.         |
 | RedirectUrl              | string   | Yönlendirme URL'ini alır veya belirler.                      |
@@ -1654,6 +1657,7 @@ Yeni bir ödeme kaydı oluşturur. Bu işlemi gerçekleştirmek için `Payment` 
 | NotificationUrl   | string  | Bildirim URL'sini alır veya belirler. Ödeme bildirim isteklerinin (IPN) gönderileceği URL'dir.  "NotificationUrl" ile gönderilen URL'ye Papara, ödeme tamamlandıktan hemen sonra bir HTTP POST isteği ile ödemenin tüm bilgilerini içeren bir ödeme nesnesi gönderecektir. "NotificationURL" ile gelen ödeme bildiriminin (IPN) Papara'nın IP adreslerinden geldiğinden emin olunuz. Gönderilen JSON obje içerisindeki "id" alanı ile HTTP GET /payments API metoduna istek yaparak doğrulayabilirsiniz. Üye iş yeri bu talebe 200 OK döndürürse tekrar bildirim yapılmayacaktır. Üye iş yeri bu bildirime 200 OK dönmezse, Papara, üye iş yeri 200 OK'e dönene kadar 24 saat boyunca ödeme bildirimi (IPN) talepleri yapmaya devam edecektir. |
 | RedirectUrl       | string  | Yönlendirme URL'sini alır veya belirler. İşlemin sonunda kullanıcının yönlendirileceği URL |
 | TurkishNationalId | long    | TC kimlik numarasını alır veya belirler. Ödemeyi alacak kullanıcının gönderdiği kimlik bilgilerinin Papara sisteminde kontrolünü sağlar. Kimlik bilgilerinde bir çelişki olması durumunda işlem gerçekleşmeyecektir. |
+| Currency                 | int      | Ödeme yapılacak para birimini alır veya belirler. Değerler “0”,  “1”, “2” veya  “3” olabilir. |
 
 ### Önemli UYARI
 

@@ -1368,6 +1368,7 @@ Send money to Papara number. To perform this operation use `PostMassPayment` met
 | MassPaymentId      | string   | ets or sets mass payment ID. Unique value  sent by merchant to prevent erroneous repetition in payment transactions. If  a massPaymentId that was sent previously and succeeded is sent again with a new  request, the request will fail. |
 | TurkishNationalId  | long     | Gets or sets national identity number.It  provides the control of the identity information sent by the user who will  receive the payment, in the Papara system. In case of a conflict of  credentials, the transaction will not take place. |
 | Description        | string   | Gets or sets description. Description of  the transaction provided by the merchant. It is not a required field. If  sent, the customer sees in the transaction descriptions. |
+| Currency | int | Gets or sets currency. Values are “0”,  “1”, “2”, “3” |
 
 ### Service Method
 
@@ -1422,6 +1423,7 @@ Send money to e-mail address registered in Papara. To perform this operation use
 | MassPaymentId     | string   | Gets or sets mass payment ID. Unique value  sent by merchant to prevent erroneous repetition in payment transactions. If  a massPaymentId that was sent previously and succeeded is sent again with a  new request, the request will fail. |
 | TurkishNationalId | long     | Gets or sets national identity number.It  provides the control of the identity information sent by the user who will  receive the payment, in the Papara system. In case of a conflict of  credentials, the transaction will not take place. |
 | Description       | string   | Gets or sets description. Description of  the transaction provided by the merchant. It is not a required field. If  sent, the customer sees in the transaction descriptions. |
+| Currency | int | Gets or sets currency. Values are “0”,  “1”, “2”, “3” |
 
 ### Service Method
 
@@ -1475,6 +1477,7 @@ Send money to phone number registered in Papara. To perform this operation use `
 | MassPaymentId     | string   | Gets or sets mass payment ID. Unique value  sent by merchant to prevent erroneous repetition in payment transactions. If  a MassPaymentId that was sent previously and succeeded is sent again with a new  request, the request will fail |
 | TurkishNationalId | long     | Gets or sets national identity number.It  provides the control of the identity information sent by the user who will  receive the payment, in the Papara system. In case of a conflict of  credentials, the transaction will not take place |
 | Description       | string   | Gets or sets description. Description of  the transaction provided by the merchant. It is not a required field. If  sent, the customer sees in the transaction descriptions |
+| Currency | int | Gets or sets currency. Values are “0”,  “1”, “2”, “3” |
 
 ### Service Method
 
@@ -1547,15 +1550,15 @@ Returns payment information. To perform this operation use `GetPayment` method o
 | CreatedAt                | DateTime | Gets or sets created date                                    |
 | MerchantId               | string   | Gets or sets merchant ID                                     |
 | UserId                   | string   | Gets or sets user ID                                         |
-| PaymentMethod            | int?     | Gets or sets payment Method.  0 -  User completed transaction with existing Papara balance  1 -  User completed the transaction with a debit / credit card that was previously  defined.  2 -  User completed transaction via mobile payment. |
+| PaymentMethod            | int      | Gets or sets payment Method.  0 -  User completed transaction with existing Papara balance  1 -  User completed the transaction with a debit / credit card that was previously  defined.  2 -  User completed transaction via mobile payment. |
 | PaymentMethodDescription | string   | Gets or sets payment method description                      |
 | ReferenceId              | string   | Gets or sets referance ID                                    |
 | OrderDescription         | string   | Gets or sets order description                               |
-| Status                   | int?     | Gets or sets status.  0 -  Awaiting, payment is not done yet.  1 -  Payment is done, transaction is completed.  2 -  Transactions is refunded by merchant. |
+| Status                   | int      | Gets or sets status.  0 -  Awaiting, payment is not done yet.  1 -  Payment is done, transaction is completed.  2 -  Transactions is refunded by merchant. |
 | StatusDescription        | string   | Gets or sets status description                              |
-| Amount                   | decimal? | Gets or sets amount                                          |
-| Feed                     | decimal? | Gets or sets fee                                             |
-| Currency                 | int?     | Gets or sets currency. Values are “0”,  “1”, “2”, “3”        |
+| Amount                   | decimal  | Gets or sets amount                                          |
+| Feed                     | decimal  | Gets or sets fee                                             |
+| Currency                 | int      | Gets or sets currency. Values are “0”,  “1”, “2”, “3”        |
 | NotificationUrl          | string   | Gets or sets notification URL                                |
 | NotificationDone         | bool?    | Gets or sets if notification was made                        |
 | RedirectUrl              | string   | Gets or sets redirect URL                                    |
@@ -1666,6 +1669,7 @@ Creates a new payment record. To perform this operation use `CreatePayment` meth
 | NotificationUrl   | string   | Gets or sets notification URL. The URL to  which payment notification requests (IPN) will be sent. With this field, the  URL where the POST will be sent to the payment merchant must be sent. To the  URL sent with "notificationUrl", Papara will send a payment object  containing all information of the payment with an HTTP POST request  immediately after the payment is completed. Make sure that the payment notification (IPN) coming to "NotificationURL" comes from Papara's IP addresses. You can check the payment by calling HTTP GET /payments API method with the "id" field in the submitted JSON. If the merchant returns 200 OK to  this request, no notification will be made again. If the merchant does not  return 200 OK to this notification, Papara will continue to make payment  notification (IPN) requests for 24 hours until the merchant returns to 200 OK |
 | RedirectUrl       | string   | Gets or sets redirect URL. URL to which  the user will be redirected at the end of the process |
 | TurkishNationalId | long     | Gets or sets national identity number.It  provides the control of the identity information sent by the user who will  receive the payment, in the Papara system. In case of a conflict of  credentials, the transaction will not take place |
+| Currency | int | Gets or sets currency. Values are “0”,  “1”, “2”, “3” |
 
 ### Important Warning
 
