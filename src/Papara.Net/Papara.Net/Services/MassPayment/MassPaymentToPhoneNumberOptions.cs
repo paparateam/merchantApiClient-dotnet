@@ -37,6 +37,12 @@ namespace Papara
         public long? TurkishNationalId { get; set; }
 
         /// <summary>
+        /// Gets or sets payment currency.
+        /// </summary>
+        [JsonProperty("currency")]
+        public Currency? Currency { get; set; }
+
+        /// <summary>
         /// Gets or sets description. Description of the transaction provided by the merchant. It is not a required field. If sent, the customer sees in the transaction descriptions.
         /// </summary>
         [JsonProperty("description")]

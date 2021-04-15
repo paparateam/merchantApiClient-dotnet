@@ -28,7 +28,7 @@ namespace Papara
         /// Gets or sets created date.
         /// </summary>
         [JsonProperty("createdAt")]
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or sets merchant ID.
@@ -49,7 +49,7 @@ namespace Papara
         /// 2 - User completed transaction via mobile payment.
         /// </summary>
         [JsonProperty("paymentMethod")]
-        public PaymentMethod? PaymentMethod { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
 
         /// <summary>
         /// Gets or sets payment method description.
@@ -76,7 +76,7 @@ namespace Papara
         /// 2 - Transactions is refunded by merchant.
         /// </summary>
         [JsonProperty("status")]
-        public PaymentStatus? Status { get; set; }
+        public PaymentStatus Status { get; set; }
 
         /// <summary>
         /// Gets or sets status description.
@@ -88,19 +88,19 @@ namespace Papara
         /// Gets or sets amount.
         /// </summary>
         [JsonProperty("amount")]
-        public decimal? Amount { get; set; }
+        public decimal Amount { get; set; }
 
         /// <summary>
         /// Gets or sets fee.
         /// </summary>
         [JsonProperty("fee")]
-        public decimal? Fee { get; set; }
+        public decimal Fee { get; set; }
 
         /// <summary>
         /// Gets or sets currency. Values are “0”, “1”, “2”, “3”.
         /// </summary>
         [JsonProperty("currency")]
-        public Currency? Currency { get; set; }
+        public Currency Currency { get; set; }
 
         /// <summary>
         /// Gets or sets notification URL.

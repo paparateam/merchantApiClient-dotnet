@@ -47,5 +47,11 @@ namespace Papara
         /// </summary>
         [JsonProperty("turkishNationalId")]
         public long? TurkishNationalId { get; set; }
+
+        /// <summary>
+        /// Gets or sets payment currency.
+        /// </summary>
+        [JsonProperty("currency")]
+        public Currency? Currency { get; set; }
     }
 }
