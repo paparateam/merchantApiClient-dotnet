@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C05811F0-1907-4467-8462-47D0C7F31923}"
+	ProjectSection(SolutionItems) = preProject
+		logo.png = logo.png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8C2F43A9-F86F-4735-B761-B16AFE80CC4A}"
 EndProject

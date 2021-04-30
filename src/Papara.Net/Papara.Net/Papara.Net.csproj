@@ -4,14 +4,22 @@
     <TargetFrameworks>netstandard2.0;net45;net461</TargetFrameworks>
     <Authors>Papara</Authors>
     <Company>Papara</Company>
-    <Description>Papara client for Papara Merchang API.</Description>
+    <Description>Papara client for Papara Merchant API.</Description>
     <PackageProjectUrl>https://papara.com</PackageProjectUrl>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
+    <RepositoryUrl>https://github.com/paparateam/merchantApiClient-dotnet</RepositoryUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <RepositoryType>Github Public</RepositoryType>
+    <PackageTags>Papara Merchant Money Pay Finance</PackageTags>
   </PropertyGroup>
   
   <ItemGroup>
     <None Include="License.txt" Pack="true" Visible="false" PackagePath="" />
+    <None Include="logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   
   <ItemGroup>
