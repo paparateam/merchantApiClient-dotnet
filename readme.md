@@ -1592,7 +1592,63 @@ var massPaymentService = new MassPaymentService(requestOptions);
 var recurringMassPaymentServiceResult = massPaymentService.CreateRecurringMassPaymentWithAccountNumber(new RecurringMassPaymentToAccountNumberOptions
 {
     AccountNumber = "ACCOUNT_NUMBER",
-    Amount = 1,
+    Amount = 99.99,
+    TurkishNationalId = 12345678901, //optional
+    Currency = 0, //optional
+    Period = 1,
+    ExecutionDay =1,
+    Description = "test"
+});
+
+if (!recurringMassPaymentServiceResult.Succeeded)
+{
+    throw new Exception(recurringMassPaymentServiceResult.Error.Message);
+}
+
+return recurringMassPaymentServiceResult;
+```
+## Create Recurring Mass Payment To Email
+
+To perform this operation use `CreateRecurringMassPaymentWithEmail` method on `MassPayment` service. `Email`, `Amount`, `TurkishNationalId`, `Period`, `Currency`, `ExecutionDay` and `Description` should be provided.
+
+### RecurringMassPaymentToEmailOptions
+
+`RecurringMassPaymentToEmailOptions` is used by mass payment service for providing request parameters.
+
+| **Variable Name** | **Type** | **Description**                                                             |
+| ----------------- | -------- | --------------------------------------------------------------------------- |
+| Email             | string   | Gets or sets e-mail address. Registered email address of the user receiving the payment.                                                                                                     |
+| Amount            | decimal  | Gets or sets amount. The amount of the payment transaction. This amount will be transferred to the account of the user who received the payment. This figure plus transaction fee will be charged to the merchant account.                                                |
+| TurkishNationalId | long?    | Gets or sets national identity number.It provides the control of the identity information sent by the user who will receive the payment, in the Papara system. In case of a conflict of credentials, the transaction will not take place.                                   |
+| Currency          | Currency | Gets or sets currency.Values are “0” (TRY), “1” (USD), “2” (EUR), “3” (GBP).|
+| Period            | int      | Gets or sets period. Values are "0" (Monthly), "1" (Weekly), "2" (Daily).   |
+| ExecutionDay      | int      | Gets or sets ...th day of period. (Weeks start with Monday).                |
+| Description       | string   | Gets or sets description. Description of the transaction provided by the merchant. It is not a required field. If sent, the customer sees in the transaction descriptions.    
+
+### Service Method
+
+#### Purpose
+
+Creates a recurring mass payment to given email address for authorized merchant.
+
+| **Method**      | **Params**                       | **Return Type**                 |
+| --------------- | -------------------------------- | ------------------------------- |
+| CreateRecurringMassPaymentWithEmail | RecurringMassPaymentToEmailOptions | PaparaSingleResult<RecurringMassPayment> |
+
+#### Usage
+
+```csharp
+var requestOptions = new RequestOptions
+{
+    ApiKey = "YOUR_API_KEY",
+    IsTest = true //Connection configuration for test or production environment.
+};
+
+var massPaymentService = new MassPaymentService(requestOptions);
+var recurringMassPaymentServiceResult = massPaymentService.CreateRecurringMassPaymentWithEmail(new RecurringMassPaymentToEmailOptions
+{
+    Email = "example@example.com",
+    Amount = 99.99,
     TurkishNationalId = 12345678901, //optional
     Currency = 0, //optional
     Period = 1,
@@ -1608,6 +1664,62 @@ if (!recurringMassPaymentServiceResult.Succeeded)
 return recurringMassPaymentServiceResult;
 ```
 
+## Create Recurring Mass Payment To Phone Number
+
+To perform this operation use `CreateRecurringMassPaymentWithPhoneNumber` method on `MassPayment` service. `PhoneNumber`, `Amount`, `TurkishNationalId`, `Period`, `Currency`, `ExecutionDay` and `Description` should be provided.
+
+### RecurringMassPaymentToPhoneNumberOptions
+
+`RecurringMassPaymentToPhoneNumberOptions` is used by mass payment service for providing request parameters.
+
+| **Variable Name** | **Type** | **Description**                                                             |
+| ----------------- | -------- | --------------------------------------------------------------------------- |
+| PhoneNumber       | string   | Gets or sets user's phone number. The mobile number of the user who will receive the payment, registered in Papara. It should contain a country code and start with +                                                                                        |
+| Amount            | decimal  | Gets or sets amount. The amount of the payment transaction. This amount will be transferred to the account of the user who received the payment. This figure plus transaction fee will be charged to the merchant account.                                                |
+| TurkishNationalId | long?    | Gets or sets national identity number.It provides the control of the identity information sent by the user who will receive the payment, in the Papara system. In case of a conflict of credentials, the transaction will not take place.                                   |
+| Currency          | Currency | Gets or sets currency.Values are “0” (TRY), “1” (USD), “2” (EUR), “3” (GBP).|
+| Period            | int      | Gets or sets period. Values are "0" (Monthly), "1" (Weekly), "2" (Daily).   |
+| ExecutionDay      | int      | Gets or sets ...th day of period. (Weeks start with Monday).                |
+| Description       | string   | Gets or sets description. Description of the transaction provided by the merchant. It is not a required field. If sent, the customer sees in the transaction descriptions.    
+
+### Service Method
+
+#### Purpose
+
+Creates a recurring mass payment to given phone number for authorized merchant.
+
+| **Method**      | **Params**                       | **Return Type**                 |
+| --------------- | -------------------------------- | ------------------------------- |
+| CreateRecurringMassPaymentWithPhoneNumber | RecurringMassPaymentToPhoneNumberOptions | PaparaSingleResult<RecurringMassPayment> |
+
+#### Usage
+
+```csharp
+var requestOptions = new RequestOptions
+{
+    ApiKey = "YOUR_API_KEY",
+    IsTest = true //Connection configuration for test or production environment.
+};
+
+var massPaymentService = new MassPaymentService(requestOptions);
+var recurringMassPaymentServiceResult = massPaymentService.CreateMassPaymentWithPhoneNumber(new RecurringMassPaymentToEmailOptions
+{
+    PhoneNumber = "+905012345678",
+    Amount = 99.99,
+    TurkishNationalId = 12345678901, //optional
+    Currency = 0, //optional
+    Period = 1,
+    ExecutionDay =1,
+    Description = "test"
+});
+
+if (!recurringMassPaymentServiceResult.Succeeded)
+{
+    throw new Exception(recurringMassPaymentServiceResult.Error.Message);
+}
+
+return recurringMassPaymentServiceResult;
+```
 
 ## Possible Errors and Error Codes
 
