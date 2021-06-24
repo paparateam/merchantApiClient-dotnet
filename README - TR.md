@@ -1519,7 +1519,7 @@ return massPaymentServiceResult;
 | 998           | Gönderdiğiniz parametreler beklenen formatta değil. Örnek: Müşteri numarası 10 haneden az. Bu durumda, hata mesajı format hatasının ayrıntılarını içerir. |
 | 999           | Papara sisteminde bir hata oluştu.                           |
 
-# <a name="mass-payment"> Düzenli Ödeme Dağıtma</a> 
+# <a name="recurring-mass-payment"> Düzenli Ödeme Dağıtma</a> 
 
 Bu bölüm, ödemelerini kullanıcılarına hızlı, güvenli ve yaygın bir şekilde Papara üzerinden düzenli bir şekilde dağıtmak isteyen iş yerleri için hazırlanmış teknik entegrasyon bilgilerini içerir.
 
