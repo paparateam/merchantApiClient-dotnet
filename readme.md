@@ -1593,8 +1593,8 @@ var recurringMassPaymentServiceResult = massPaymentService.CreateRecurringMassPa
 {
     AccountNumber = "ACCOUNT_NUMBER",
     Amount = 1,
-    TurkishNationalId = 12345678901,
-    Currency = 0,
+    TurkishNationalId = 12345678901, //optional
+    Currency = 0, //optional
     Period = 1,
     ExecutionDay =1,
     Description = "test"

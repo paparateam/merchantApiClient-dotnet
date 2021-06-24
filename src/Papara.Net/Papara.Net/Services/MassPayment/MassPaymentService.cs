@@ -136,7 +136,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToAccountNumberOptions recurring mass payment to account number options</param>
         public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithAccountNumber(RecurringMassPaymentToAccountNumberOptions options)
         {
-            return this.PostSingleResult<RecurringMassPayment>("/", options, this.requestOptions);
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment", options, this.requestOptions);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToAccountNumberOptions recurring mass payment to account number options</param>
         public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithAccountNumberAsync (RecurringMassPaymentToAccountNumberOptions options)
         {
-            return await this.PostSingleResultAsync<RecurringMassPayment>("/", options, this.requestOptions);
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment", options, this.requestOptions);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToEmailOptions recurring mass payment to account number options</param>
         public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithEmail(RecurringMassPaymentToEmailOptions options)
         {
-            return this.PostSingleResult<RecurringMassPayment>("/email", options, this.requestOptions);
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment/email", options, this.requestOptions);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToEmailOptions recurring mass payment to account number options</param>
         public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithEmailAsync(RecurringMassPaymentToEmailOptions options)
         {
-            return await this.PostSingleResultAsync<RecurringMassPayment>("/email", options, this.requestOptions);
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment/email", options, this.requestOptions);
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToPhoneNumberOptions recurring mass payment to Phone number options</param>
         public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithPhoneNumber(RecurringMassPaymentToPhoneNumberOptions options)
         {
-            return this.PostSingleResult<RecurringMassPayment>("/phone", options, this.requestOptions);
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment/phone", options, this.requestOptions);
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Papara
         /// <param name="options">RecurringMassPaymentToPhoneNumberOptions recurring mass payment to Phone number options</param>
         public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithPhoneNumberAsync(RecurringMassPaymentToPhoneNumberOptions options)
         {
-            return await this.PostSingleResultAsync<RecurringMassPayment>("/phone", options, this.requestOptions);
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment/phone", options, this.requestOptions);
         }        
 
 
