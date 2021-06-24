@@ -14,7 +14,7 @@ namespace Papara
         /// Gets or sets merchant id.
         /// </summary>
         [JsonProperty("merchantId")]
-        public string merchantId { get; set; }
+        public string MerchantId { get; set; }
 
 
         /// <summary>
