@@ -1597,6 +1597,60 @@ if (!recurringMassPaymentServiceResult.Succeeded)
 return recurringMassPaymentServiceResult;
 ```
 
+## E-Posta Adresine Düzenli Ödeme Gönderme
+Papara'da kayıtlı bir E-posta adresine düzenli para gönderin. Bu işlemi gerçekleştirmek için `MassPayment` servisinde bulunan `CreateRecurringMassPaymentWithEmail` methodunu kullanın. `Email`, `Amount`, `TurkishNationalId`, `Period`, `Currency`, `ExecutionDay` ve `Description` gönderilmelidir.
+
+### RecurringMassPaymentToEmailOptions
+
+| **Değişken Adı** | **Tip**  | **Açıklama**                                                 |
+| ---------------- | -------- | ------------------------------------------------------------ |
+| Email | string | Ödeme alacak kullanıcının Papara'ya kayıtlı olan e-posta adresi. |
+| Amount | decimal | Ödeme işleminin tutarı. Ödemeyi alan kullanıcının hesabına tam olarak bu tutar transfer edilecektir. Üye işyeri hesabına bu rakam artı işlem ücreti yansıtılacaktır.                 |
+| TurkishNationalId    | long?   | Ödeme alacak kullanıcının kimlik numarası. Ödeme alacak kullanıcının, Papara sistemindeki kimlik bilgisi ile gönderilen kimlik bilgisinin kontrolünü sağlar. Kimlik bilgileri uyuşmazlığı durumunda işlem gerçekleşmez.                         |
+| Currency      | Currency?   | Ödeme yapılacak para birimi.                               |
+| Period        | int | Düzenli ödeme talimatları için talimata ait periyot bilgisi.         |
+| ExecutionDay  | int | Ödemenin periyot içindeki çalışma günü bilgisi. Günlük olarak verilen talimatlar için bu değer 0 olarak kabul edilir.                           |
+| Description   | string | Ödeme alacak kullanıcının göreceği açıklama.                              |
+
+### Servis Methodu
+
+#### Kullanım Amacı
+
+Üye iş yeri için verilen e-posta adresine düzenli ödeme göndermek için kullanılır.
+
+| **Method**      | **Parametreler**                 | **Geri Dönüş Tipi**             |
+| --------------- | -------------------------------- | ------------------------------- |
+| CreateRecurringMassPaymentWithEmail | RecurringMassPaymentToEmailOptions | PaparaSingleResult<RecurringMassPayment> |
+
+#### Kullanım Şekli
+
+```csharp
+var requestOptions = new RequestOptions
+{
+    ApiKey = "YOUR_API_KEY",
+    IsTest = true //Test veya canlı ortamı için bağlantı yapılandırması
+};
+
+var massPaymentService = new MassPaymentService(requestOptions);
+var recurringMassPaymentServiceResult = massPaymentService.CreateRecurringMassPaymentWithEmail(new RecurringMassPaymentToEmailOptions
+{
+    Email = "example@example.com",
+    Amount = 99.99,
+    TurkishNationalId = 12345678901, //opsiyonel
+    Currency = 0, //opsiyonel
+    Period = 1,
+    ExecutionDay =1,
+    Description = "test"
+});
+
+if (!recurringMassPaymentServiceResult.Succeeded)
+{
+    throw new Exception(recurringMassPaymentServiceResult.Error.Message);
+}
+
+return recurringMassPaymentServiceResult;
+```
+
 ## Telefon Numarasına Düzenli Gönderme
 
 Papara'da kayıtlı telefon numarasına düzenli para gönderin. Bu işlemi gerçekleştirmek için `MassPayment` servisinde bulunan `CreateRecurringMassPaymentWithPhoneNumber` methodunu kullanın. `PhoneNumber`, `Amount`, `ExecutionDay`, `Description`  ve `Period` gönderilmelidir.
@@ -1637,60 +1691,6 @@ var massPaymentService = new MassPaymentService(requestOptions);
 var recurringMassPaymentServiceResult = massPaymentService.CreateMassPaymentWithPhoneNumber(new RecurringMassPaymentToEmailOptions
 {
     PhoneNumber = "+905012345678",
-    Amount = 99.99,
-    TurkishNationalId = 12345678901, //opsiyonel
-    Currency = 0, //opsiyonel
-    Period = 1,
-    ExecutionDay =1,
-    Description = "test"
-});
-
-if (!recurringMassPaymentServiceResult.Succeeded)
-{
-    throw new Exception(recurringMassPaymentServiceResult.Error.Message);
-}
-
-return recurringMassPaymentServiceResult;
-```
-
-## E-Posta Adresine Düzenli Ödeme Gönderme
-Papara'da kayıtlı bir E-posta adresine düzenli para gönderin. Bu işlemi gerçekleştirmek için `MassPayment` servisinde bulunan `CreateRecurringMassPaymentWithEmail` methodunu kullanın. `Email`, `Amount`, `TurkishNationalId`, `Period`, `Currency`, `ExecutionDay` ve `Description` gönderilmelidir.
-
-### RecurringMassPaymentToEmailOptions
-
-| **Değişken Adı** | **Tip**  | **Açıklama**                                                 |
-| ---------------- | -------- | ------------------------------------------------------------ |
-| Email | string | Ödeme alacak kullanıcının Papara'ya kayıtlı olan e-posta adresi. |
-| Amount | decimal | Ödeme işleminin tutarı. Ödemeyi alan kullanıcının hesabına tam olarak bu tutar transfer edilecektir. Üye işyeri hesabına bu rakam artı işlem ücreti yansıtılacaktır.                 |
-| TurkishNationalId    | long?   | Ödeme alacak kullanıcının kimlik numarası. Ödeme alacak kullanıcının, Papara sistemindeki kimlik bilgisi ile gönderilen kimlik bilgisinin kontrolünü sağlar. Kimlik bilgileri uyuşmazlığı durumunda işlem gerçekleşmez.                         |
-| Currency      | Currency?   | Ödeme yapılacak para birimi.                               |
-| Period        | int | Düzenli ödeme talimatları için talimata ait periyot bilgisi.         |
-| ExecutionDay  | int | Ödemenin periyot içindeki çalışma günü bilgisi. Günlük olarak verilen talimatlar için bu değer 0 olarak kabul edilir.                           |
-| Description   | string | Ödeme alacak kullanıcının göreceği açıklama.                              |
-
-### Servis Methodu
-
-#### Kullanım Amacı
-
-Üye iş yeri için verilen e-posta adresine düzenli ödeme göndermek için kullanılır.
-
-| **Method**      | **Parametreler**                 | **Geri Dönüş Tipi**             |
-| --------------- | -------------------------------- | ------------------------------- |
-| CreateRecurringMassPaymentWithEmail | RecurringMassPaymentToEmailOptions | PaparaSingleResult<RecurringMassPayment> |
-
-#### Kullanım Şekli
-
-```csharp
-var requestOptions = new RequestOptions
-{
-    ApiKey = "YOUR_API_KEY",
-    IsTest = true //Test veya canlı ortamı için bağlantı yapılandırması
-};
-
-var massPaymentService = new MassPaymentService(requestOptions);
-var recurringMassPaymentServiceResult = massPaymentService.CreateRecurringMassPaymentWithEmail(new RecurringMassPaymentToEmailOptions
-{
-    Email = "example@example.com",
     Amount = 99.99,
     TurkishNationalId = 12345678901, //opsiyonel
     Currency = 0, //opsiyonel
