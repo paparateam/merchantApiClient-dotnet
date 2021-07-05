@@ -37,7 +37,7 @@ namespace Papara
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// Gets or sets currency.Values are “0”, “1”, “2”, “3”.
+        /// Gets or sets currency.Values are “0” (TRY), “1” (USD), “2” (EUR), “3” (GBP).
         /// </summary>
         [JsonProperty("currency")]
         public Currency? Currency { get; set; }

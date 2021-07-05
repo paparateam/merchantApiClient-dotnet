@@ -128,5 +128,67 @@ namespace Papara
         {
             return await this.GetSingleResultAsync<MassPayment>("/byreference", options, this.requestOptions);
         }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given account number for authorized merchant 
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToAccountNumberOptions recurring mass payment to account number options</param>
+        public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithAccountNumber(RecurringMassPaymentToAccountNumberOptions options)
+        {
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment", options, this.requestOptions);
+        }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given account number for authorized merchant 
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToAccountNumberOptions recurring mass payment to account number options</param>
+        public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithAccountNumberAsync (RecurringMassPaymentToAccountNumberOptions options)
+        {
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment", options, this.requestOptions);
+        }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given e-mail address for authorized merchant.
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToEmailOptions recurring mass payment to account number options</param>
+        public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithEmail(RecurringMassPaymentToEmailOptions options)
+        {
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment/email", options, this.requestOptions);
+        }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given e-mail address for authorized merchant.
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToEmailOptions recurring mass payment to account number options</param>
+        public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithEmailAsync(RecurringMassPaymentToEmailOptions options)
+        {
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment/email", options, this.requestOptions);
+        }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given phone number for authorized merchant.
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToPhoneNumberOptions recurring mass payment to Phone number options</param>
+        public PaparaSingleResult<RecurringMassPayment> CreateRecurringMassPaymentWithPhoneNumber(RecurringMassPaymentToPhoneNumberOptions options)
+        {
+            return this.PostSingleResult<RecurringMassPayment>("/recurringmasspayment/phone", options, this.requestOptions);
+        }
+
+        /// <summary>
+        /// Creates a recurring mass payment to given phone number for authorized merchant.
+        /// </summary>
+        /// <returns><see cref="PaparaSingleResult{TEntity}"/>.</returns>
+        /// <param name="options">RecurringMassPaymentToPhoneNumberOptions recurring mass payment to Phone number options</param>
+        public async Task<PaparaSingleResult<RecurringMassPayment>> CreateRecurringMassPaymentWithPhoneNumberAsync(RecurringMassPaymentToPhoneNumberOptions options)
+        {
+            return await this.PostSingleResultAsync<RecurringMassPayment>("/recurringmasspayment/phone", options, this.requestOptions);
+        }        
+
+
     }
 }
