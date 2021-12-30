@@ -254,7 +254,7 @@ namespace Papara.Infrastructure
         /// <returns>Service result from given path.</returns>
         protected async Task<PaparaServiceResult> PutServiceResultAsync(string childPath, BaseOptions options = null, RequestOptions requestOptions = null)
         {
-            return await this.client.RequestAsync<PaparaServiceResult>(HttpMethod.Get, this.BasePath + childPath, options, requestOptions).ConfigureAwait(false);
+            return await this.client.RequestAsync<PaparaServiceResult>(HttpMethod.Put, this.BasePath + childPath, options, requestOptions).ConfigureAwait(false);
         }
 
         /// <summary>
